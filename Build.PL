@@ -8,7 +8,6 @@ my $builder = Module::Build->new(
     dist_author => 'William Travis Holton <cromulent2000_eisley@yahoo.de>',
     dist_version_from    => 'lib/Hessian/Translator.pm',
     recursive_test_files => 1,
-#    'create_makefile_pl' => 'passthrough',
     requires             => {
         'Test::More'                    => 0,
         'Test::Class'                   => 0,

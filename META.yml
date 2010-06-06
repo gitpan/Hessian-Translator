@@ -4,7 +4,7 @@ author:
   - 'William Travis Holton <cromulent2000_eisley@yahoo.de>'
 configure_requires:
   Module::Build: 0.36
-generated_by: 'Module::Build version 0.3603'
+generated_by: 'Module::Build version 0.3607'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -39,7 +39,7 @@ provides:
     file: lib/Hessian/Simple.pm
   Hessian::Translator:
     file: lib/Hessian/Translator.pm
-    version: 1.00
+    version: 1.01
   Hessian::Translator::Composite:
     file: lib/Hessian/Translator/Composite.pm
   Hessian::Translator::Envelope:
@@ -75,4 +75,4 @@ requires:
   version: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.00
+version: 1.01
