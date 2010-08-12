@@ -39,7 +39,7 @@ provides:
     file: lib/Hessian/Simple.pm
   Hessian::Translator:
     file: lib/Hessian/Translator.pm
-    version: 1.01
+    version: 1.02
   Hessian::Translator::Composite:
     file: lib/Hessian/Translator/Composite.pm
   Hessian::Translator::Envelope:
@@ -75,4 +75,4 @@ requires:
   version: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.01
+version: 1.02
