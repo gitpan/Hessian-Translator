@@ -3,7 +3,7 @@ package  Test::Hessian::Service::V1;
 use strict;
 use warnings;
 
-use base 'Test::Class';
+use parent 'Test::Hessian::Service';
 
 use Test::More;
 use Test::Deep;
@@ -15,7 +15,7 @@ use DateTime;
 
 my $test_service = 'http://hessian.caucho.com/test/test2';
 
-sub prep01_check_webservice : Test(startup) {    #{{{
+sub prep02_check_webservice : Test(startup) {    #{{{
     my $self   = shift;
     my $client = Hessian::Client->new(
         {
