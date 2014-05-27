@@ -87,7 +87,7 @@
       },
       "Hessian::Translator" : {
          "file" : "lib/Hessian/Translator.pm",
-         "version" : "1.05"
+         "version" : "1.06"
       },
       "Hessian::Translator::Composite" : {
          "file" : "lib/Hessian/Translator/Composite.pm"
@@ -111,5 +111,5 @@
          "url" : "https://github.com/heytrav/hessian-client.git"
       }
    },
-   "version" : "1.05"
+   "version" : "1.06"
 }
