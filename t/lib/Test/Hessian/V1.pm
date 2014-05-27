@@ -3,7 +3,7 @@ package  Test::Hessian::V1;
 use strict;
 use warnings;
 
-use base 'Test::Hessian';
+use parent 'Test::Hessian';
 
 use YAML;
 use Test::More;
@@ -14,7 +14,7 @@ use Hessian::Translator::V1;
 sub prep001_version : Test(startup) {    #{{{
     my $self = shift;
     $self->{version} = 1;
-}    #}}}
+}
 
 sub t006_compose_version : Test(1) {    #{{{
     my $self   = shift;
@@ -24,7 +24,7 @@ sub t006_compose_version : Test(1) {    #{{{
     }
     'Version role has been composed.';
 
-}    #}}}
+}
 
 "one, but we're not the same";
 

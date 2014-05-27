@@ -1,4 +1,4 @@
-package Hessian::Translator 1.03;
+package Hessian::Translator 1.04;
 
 use Moose;
 
@@ -18,12 +18,12 @@ has 'type_list' => (    #{{{
     isa     => 'ArrayRef',
     lazy    => 1,
     default => sub { [] }
-);                      #}}}
+);
 has 'reference_list' => ( is => 'rw', default => sub { [] } );
 has 'input_string' => (    #{{{
     is  => 'rw',
     isa => 'Str',
-);                         #}}}
+);
 has 'version'     => ( is => 'ro', isa => 'Int' );
 has 'binary_mode' => ( is => 'ro', isa => 'Bool', default => 0 );
 has 'chunked'     => ( is => 'ro', isa => 'Bool', default => 0 );
@@ -40,7 +40,7 @@ before 'input_string' => sub {    #{{{
         Hessian::Deserializer->meta()->apply($self);
     }
     $self->version();
-};    #}}}
+};
 
 sub append_input_buffer {    #{{{
     my ( $self, $hessian_string ) = @_;
@@ -54,7 +54,7 @@ sub append_input_buffer {    #{{{
     else {
         $self->input_string($hessian_string);
     }
-}    #}}}
+}
 
 before 'serializer' => sub {    #{{{
     my $self = shift;
@@ -63,7 +63,7 @@ before 'serializer' => sub {    #{{{
         Hessian::Serializer->meta()->apply($self);
     }
     $self->version();
-};    #}}}
+};
 
 after 'version' => sub {    #{{{
     my ($self) = @_;
@@ -82,7 +82,7 @@ after 'version' => sub {    #{{{
         load $version_role;
         $version_role->meta()->apply($self);
     }    #PROCESSVERSION
-};    #}}}
+};
 
 sub read_from_inputhandle {    #{{{
     my ( $self, $read_length ) = @_;
@@ -121,14 +121,14 @@ sub read_from_inputhandle {    #{{{
     }
     return $result;
 
-}    #}}}
+}
 
 sub set_current_position {    #{{{
     my ( $self, $offset ) = @_;
     my $input_handle     = $self->input_handle();
     my $current_position = ( tell $input_handle ) + $offset;
     $self->original_position($current_position);
-}    #}}}
+}
 
 sub BUILD {    #{{{
     my ( $self, $params ) = @_;
@@ -148,7 +148,7 @@ sub BUILD {    #{{{
     my $byteorder = $Config{byteorder};
     $self->is_big_endian(1) if $byteorder =~ /4321/;
 
-}    #}}}
+}
 
 "one, but we're not the same";
 
@@ -175,7 +175,7 @@ Hessian::Translator - Base class for Hessian serialization/deserialization.
 
 B<Hessian::Translator> and associated subclasses and roles provides
 serialization/deserialization of data and Perl datastructures into Hessian
-protocol.  
+protocol.
 
 On its own, this class really only provides some of the more basic functions
 required for Hessian processing such as the I<type list> for datatypes, the
@@ -185,7 +185,7 @@ deserialization behaviours only takes place when needed. Depending on how
 the translator is initialized and which methods are called on the object, it
 is possibly to specialize the object for either Hessian 1.0 or Hessian 2.0
 processing and to selectively include methods for serialization and or
-deserialization.  
+deserialization.
 
 
 
